@@ -48,13 +48,88 @@ function addManager () {
 
         // rendering the file
         const renderedHTML = render(teamArray);
-        
+        fs.writeFileSync(outputPath, renderedHTML);
+    })
+}
+//engineer function
+function addEngineer () {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "engineerName",
+            message: "What is the name of the engineer?"
+        },
+        {
+            type: "input",
+            name: "engineerId",
+            message: "What is the id of the engineer?"
+        },
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What is the email of the engineer?"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the gitHub username of the engineer?"
+        }
+    ]).then(answers => {
+
+        const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.gitHub)
+        //console.log(engineer)
+
+        teamArray.push(engineer)
+
+
+        // rendering the file
+        const renderedHTML = render(teamArray);
+        fs.writeFileSync(outputPath, renderedHTML);
+    })
+}
+
+//intern function
+function addInter () {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "internName",
+            message: "What is the name of the intern?"
+        },
+        {
+            type: "input",
+            name: "internId",
+            message: "What is the id of the intern?"
+        },
+        {
+            type: "input",
+            name: "internEmail",
+            message: "What is the email of the intern?"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is the gitHub username of the intern?"
+        }
+    ]).then(answers => {
+
+        const engineer = new Engineer(answers.internName, answers.internId, answers.internEmail, answers.gitHub)
+        //console.log(intern)
+
+        teamArray.push(intern)
+
+
+        // rendering the file
+        const renderedHTML = render(teamArray);
         fs.writeFileSync(outputPath, renderedHTML);
     })
 }
 
 function startTeamBuilding () {
     addManager();
+    addEngineer();
+    addIntern();
+
     // add engineer
     // add intern
 }

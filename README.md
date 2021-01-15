@@ -5,11 +5,11 @@ This Node application will assist managers in generating a webpage that displays
 ## **SCREENSHOTS**
 ---
 The following animation demonstrates the application functionality:
-![test](assets/test.png)
-![IO SCREENSHOT](assets/index.png)
+![test](test.png)
+![IO SCREENSHOT](index.png)
 
 ## **VIDEO**
-![Team Gif](assets/cli.gif)
+![Team Gif](cli.gif)
 
 ## **INSTALLATION**
 ---

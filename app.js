@@ -107,27 +107,11 @@ const internQuestions = [{
         message: "What is your intern's school?"
     }
 ];
-const employeeQuestions = [{
-        type: "input",
-        name: "employee_name",
-        message: "What is your the Employee's name?"
-    },
-    {
-        type: "input",
-        name: "employee_id",
-        message: "What is your Employee's id?"
-    },
-    {
-        type: "input",
-        name: "employee_email",
-        message: "What is your Employee's email?"
-    }
-    
-];
+
 const list = [{
     type: "list",
     name: "teamMember_type",
-    choices: ["Engineer", "Intern", "Employee", "I don't want to add any more team members"],
+    choices: ["Engineer", "Intern", "I don't want to add any more team members"],
     message: "Select the role to add in your team?"
 }];
 
@@ -159,7 +143,7 @@ const promptNext = () => {
     });
 };
 
-// If you are a manager then answer
+// Manager
 const promptManager = () => {
     inquirer.prompt(managersBio).then(ans => {
         console.log(ans);
@@ -177,7 +161,7 @@ const promptMyManager = () => {
     });
 };
 
-// If you are an Engineer
+// Engineer
 const promptEngineer = () => {
     inquirer.prompt(engineerQuestions).then(ans => {
         console.log(ans);
@@ -195,14 +179,7 @@ const promptIntern = () => {
     });
 };
 
-// If you are an Employee
-const promptEmployee = () => {
-    inquirer.prompt(employeeQuestions).then(ans => {
-        console.log(ans);
-        mainArr.push(new Employee(ans.emplyee_name, ans.employee_id, ans.employee_email));
-        promptNext();
-    });
-};
+
 // Create HTML
 const createHtml = () => {
     console.log('this is new html');
